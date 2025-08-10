@@ -21,7 +21,7 @@ app.post('/', async (req, res) => {
 
     try {
         const response = await axios.post(`https://discord.com/api/webhooks/${url}`, data);
-        res.status(response.status).send(response.data);
+        res.status(response.status).send("Discord:" + response.data);
     } catch (error) {
         const status = error.response?.status || 500;
         const message = error.response?.data || 'Unknown error';
