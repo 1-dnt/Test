@@ -25,7 +25,7 @@ app.post('/', async (req, res) => {
     } catch (error) {
         const status = error.response?.status || 500;
         const message = error.response?.data || 'Unknown error';
-        res.status(status).send({ error: message });
+        res.status(status).send({ error: "Proxy:" + message });
     }
 });
 
